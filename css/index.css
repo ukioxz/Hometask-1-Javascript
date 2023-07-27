@@ -1,3 +1,10 @@
+.inputes{
+    display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
 .input-box{
     display: flex;
     flex-wrap: wrap;
@@ -5,9 +12,10 @@
     justify-content: center;
     align-items: center;
 }
-.input-todo{
+input{
     width: 220px;
-    height: 40px;
+    height: 30px;
+    margin-top: 10px;
 }
 .add-btn{
     width: 200px;
