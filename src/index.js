@@ -20,7 +20,17 @@ let inputTodoName = document.querySelector(".input-todo-name");
 let inputTodoCategory = document.querySelector(".input-todo-category");
 let inputTodoContent = document.querySelector(".input-todo-content");
 let inputTodoDates = document.querySelector(".input-todo-dates");
+let dropdownBox = document.querySelector(".category-list");
 
+inputTodoCategory.addEventListener("click", () => {
+  dropdownBox.style.display = "block";
+});
+dropdownBox.addEventListener("click", (event) => {
+  if (event.target.tagName === "LI") {
+    inputTodoCategory.value = event.target.textContent;
+    dropdownBox.style.display = "none"; // Щоб список категорій приховався після вибору
+  }
+});
 addButton.addEventListener("click", () => {
   //   let div = document.createElement("div");
   // div.innerText = document.getElementById("getText").innerText;
