@@ -1,5 +1,6 @@
 // const db = require("../../db/db.json");
 import myJson from "../db/db.json" assert { type: "json" };
+import { formattedDate } from "../src/date.js";
 
 // 👇️ {
 //   name: 'Alice',
@@ -15,7 +16,7 @@ let addButton = document.querySelector(".add-btn");
 // let todoItem = document.querySelector(".todo-item");
 let todoContainer = document.querySelector(".todo-container");
 let inputTodoName = document.querySelector(".input-todo-name");
-let inputTodoCreated = document.querySelector(".input-todo-created");
+// let inputTodoCreated = document.querySelector(".input-todo-created");
 let inputTodoCategory = document.querySelector(".input-todo-category");
 let inputTodoContent = document.querySelector(".input-todo-content");
 let inputTodoDates = document.querySelector(".input-todo-dates");
@@ -34,7 +35,7 @@ addButton.addEventListener("click", () => {
 
   let newTodo = {
     name: inputTodoName.value,
-    created: inputTodoCreated.value,
+    // created: inputTodoCreated.value,
     category: inputTodoCategory.value,
     content: inputTodoContent.value,
     dates: inputTodoDates.value,
@@ -48,7 +49,7 @@ addButton.addEventListener("click", () => {
   textName.append(inputTodoName.value);
 
   textCreated.classList.add("created-item");
-  textCreated.append(inputTodoCreated.value);
+  textCreated.append(formattedDate);
 
   textCategory.classList.add("category-item");
   textCategory.append(inputTodoCategory.value);
