@@ -1,16 +1,6 @@
-// const db = require("../../db/db.json");
 import myJson from "../db/db.json" assert { type: "json" };
-import { formattedDate } from "../src/date.js";
-
-// 👇️ {
-//   name: 'Alice',
-//   country: 'Austria',
-//   tasks: [ 'develop', 'design', 'test' ],
-//   age: 30
-// }
-console.log(myJson.todos);
-
-console.log(myJson.todos[0].name); // 👉️ "Alice"
+// import { formattedDate } from "../src/date.js";
+import { createTodoItem } from "./createTodo.js";
 
 let addButton = document.querySelector(".add-btn");
 // let todoItem = document.querySelector(".todo-item");
@@ -28,49 +18,60 @@ inputTodoCategory.addEventListener("click", () => {
 dropdownBox.addEventListener("click", (event) => {
   if (event.target.tagName === "LI") {
     inputTodoCategory.value = event.target.textContent;
-    dropdownBox.style.display = "none"; // Щоб список категорій приховався після вибору
+    dropdownBox.style.display = "none";
   }
 });
+
 addButton.addEventListener("click", () => {
+  const selectedDate = new Date(inputTodoDates.value);
+  const currentDate = new Date();
+
   //   let div = document.createElement("div");
   // div.innerText = document.getElementById("getText").innerText;
   //   todoItem.textContent = inputTodo.value;
   //   todoContainer.appendChild(todoItem);
-  let todoItemContainer = document.createElement("div");
-  let textName = document.createElement("div");
-  let textCreated = document.createElement("div");
-  let textCategory = document.createElement("div");
-  let textContent = document.createElement("div");
-  let textDates = document.createElement("div");
 
-  let newTodo = {
-    name: inputTodoName.value,
-    // created: inputTodoCreated.value,
-    category: inputTodoCategory.value,
-    content: inputTodoContent.value,
-    dates: inputTodoDates.value,
-  };
-  myJson.todos.push(newTodo);
-  console.log(myJson.todos);
+  // let todoItemContainer = document.createElement("div");
+  // let textName = document.createElement("div");
+  // let textCreated = document.createElement("div");
+  // let textCategory = document.createElement("div");
+  // let textContent = document.createElement("div");
+  // let textDates = document.createElement("div");
 
-  todoItemContainer.classList.add("todo-item");
+  // let newTodo = {
+  //   name: inputTodoName.value,
+  //   // created: inputTodoCreated.value,
+  //   category: inputTodoCategory.value,
+  //   content: inputTodoContent.value,
+  //   dates: inputTodoDates.value,
+  // };
+  // myJson.todos.push(newTodo);
+  // console.log(myJson.todos);
 
-  textName.classList.add("name-item");
-  textName.append(inputTodoName.value);
+  if (selectedDate < currentDate) {
+    alert("Виберіть дату, яка не є минулою.");
+    inputTodoDates.value = "";
+  } else {
+    createTodoItem();
+    // todoItemContainer.classList.add("todo-item");
 
-  textCreated.classList.add("created-item");
-  textCreated.append(formattedDate);
+    // textName.classList.add("name-item");
+    // textName.append(inputTodoName.value);
 
-  textCategory.classList.add("category-item");
-  textCategory.append(inputTodoCategory.value);
+    // textCreated.classList.add("created-item");
+    // textCreated.append(formattedDate);
 
-  textContent.classList.add("content-item");
-  textContent.append(inputTodoContent.value);
+    // textCategory.classList.add("category-item");
+    // textCategory.append(inputTodoCategory.value);
 
-  textDates.classList.add("dates-item");
-  textDates.append(inputTodoDates.value);
+    // textContent.classList.add("content-item");
+    // textContent.append(inputTodoContent.value);
 
-  todoContainer
-    .appendChild(todoItemContainer)
-    .append(textName, textCreated, textCategory, textContent, textDates);
+    // textDates.classList.add("dates-item");
+    // textDates.append(inputTodoDates.value);
+
+    // todoContainer
+    //   .appendChild(todoItemContainer)
+    //   .append(textName, textCreated, textCategory, textContent, textDates);
+  }
 });
