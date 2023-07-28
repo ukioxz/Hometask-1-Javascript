@@ -38,6 +38,24 @@ input{
     overflow-y: auto;
     z-index: 1;
 }
+.delete-btn{
+    background-color: #e65c00;
+    width: 30px;
+    height: 16px;
+    cursor: pointer;
+}
+.archiv-btn {
+    background-color: #3123b3;
+    width: 30px;
+    height: 16px;
+    cursor: pointer;
+}
+.edit-btn {
+    background-color: #50b428;
+    width: 30px;
+    height: 16px;
+    cursor: pointer;
+}
 
 ul li {
     padding: 10px;

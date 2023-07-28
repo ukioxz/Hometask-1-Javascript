@@ -14,6 +14,9 @@ const createTodoItem = () => {
   let textCategory = document.createElement("div");
   let textContent = document.createElement("div");
   let textDates = document.createElement("div");
+  let deleteBtn = document.createElement("div");
+  let archiveBtn = document.createElement("div");
+  let editBtn = document.createElement("div");
   todoItemContainer.classList.add("todo-item");
 
   textName.classList.add("name-item");
@@ -31,8 +34,21 @@ const createTodoItem = () => {
   textDates.classList.add("dates-item");
   textDates.append(inputTodoDates.value);
 
+  editBtn.classList.add("edit-btn");
+  archiveBtn.classList.add("archiv-btn");
+  deleteBtn.classList.add("delete-btn");
+
   todoContainer
     .appendChild(todoItemContainer)
-    .append(textName, textCreated, textCategory, textContent, textDates);
+    .append(
+      textName,
+      textCreated,
+      textCategory,
+      textContent,
+      textDates,
+      editBtn,
+      archiveBtn,
+      deleteBtn
+    );
 };
 export { createTodoItem };
