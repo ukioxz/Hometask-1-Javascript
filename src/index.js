@@ -21,6 +21,9 @@ dropdownBox.addEventListener("click", (event) => {
     dropdownBox.style.display = "none";
   }
 });
+// deleteBtn.addEventListener("click", () => {
+//   console.log("delete");
+// });
 
 addButton.addEventListener("click", () => {
   const selectedDate = new Date(inputTodoDates.value);

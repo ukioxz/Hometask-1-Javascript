@@ -43,6 +43,10 @@ const createTodoItem = () => {
   deleteBtn.classList.add("delete-btn");
   deleteBtn.append("Delete");
 
+  deleteBtn.addEventListener("click", () => {
+    todoItemContainer.remove();
+  });
+
   todoContainer
     .appendChild(todoItemContainer)
     .append(
