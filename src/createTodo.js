@@ -35,8 +35,13 @@ const createTodoItem = () => {
   textDates.append(inputTodoDates.value);
 
   editBtn.classList.add("edit-btn");
+  editBtn.append("Edit");
+
   archiveBtn.classList.add("archiv-btn");
+  archiveBtn.append("Archive");
+
   deleteBtn.classList.add("delete-btn");
+  deleteBtn.append("Delete");
 
   todoContainer
     .appendChild(todoItemContainer)

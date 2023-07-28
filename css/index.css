@@ -40,21 +40,24 @@ input{
 }
 .delete-btn{
     background-color: #e65c00;
-    width: 30px;
-    height: 16px;
+    padding: 4px 8px 4px 8px;
     cursor: pointer;
+    font-size:14px;
+    color: white;
 }
 .archiv-btn {
     background-color: #3123b3;
-    width: 30px;
-    height: 16px;
+    padding: 4px 8px 4px 8px;
     cursor: pointer;
+    font-size: 14px;
+        color: white;
 }
 .edit-btn {
     background-color: #50b428;
-    width: 30px;
-    height: 16px;
+    padding: 4px 8px 4px 8px;
     cursor: pointer;
+    font-size: 14px;
+        color: white;
 }
 
 ul li {
