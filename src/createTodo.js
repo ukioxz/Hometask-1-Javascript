@@ -6,6 +6,16 @@ let inputTodoCategory = document.querySelector(".input-todo-category");
 let inputTodoContent = document.querySelector(".input-todo-content");
 let inputTodoDates = document.querySelector(".input-todo-dates");
 
+let amountActiveTask = document.querySelector(".amount-active-task");
+let amountArchiveTask = document.querySelector(".amount-archived-task");
+let nArchiveTask = 0;
+let amountActiveThought = document.querySelector(".amount-active-thought");
+let amountArchiveThought = document.querySelector(".amount-archived-thought");
+let nArchiveThought = 0;
+let amountActiveIdea = document.querySelector(".amount-active-idea");
+let amountArchiveIdea = document.querySelector(".amount-archived-idea");
+let nArchiveIdea = 0;
+
 const createTodoItem = () => {
   let todoContainer = document.querySelector(".todo-container");
   let todoItemContainer = document.createElement("div");
@@ -44,6 +54,23 @@ const createTodoItem = () => {
   deleteBtn.append("Delete");
 
   deleteBtn.addEventListener("click", () => {
+    todoItemContainer.remove();
+  });
+
+  archiveBtn.addEventListener("click", () => {
+    if (textCategory.textContent == "Task") {
+      console.log(textCategory.textContent);
+      nArchiveTask++;
+      amountArchiveTask.textContent = nArchiveTask;
+    } else if (textCategory.textContent == "Random Thought") {
+      console.log(textCategory.textContent);
+      nArchiveThought++;
+      amountArchiveThought.textContent = nArchiveThought;
+    } else if (textCategory.textContent == "Idea") {
+      console.log(textCategory.textContent);
+      nArchiveIdea++;
+      amountArchiveIdea.textContent = nArchiveIdea;
+    }
     todoItemContainer.remove();
   });
 
