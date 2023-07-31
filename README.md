@@ -2,7 +2,7 @@
 
 <br/>
 A simple notes app in JS as a web app.
-<br/>
+
 # Main features for users:
 
 - Add task
