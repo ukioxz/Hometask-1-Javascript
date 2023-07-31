@@ -9,12 +9,15 @@ let inputTodoDates = document.querySelector(".input-todo-dates");
 let amountActiveTask = document.querySelector(".amount-active-task");
 let amountArchiveTask = document.querySelector(".amount-archived-task");
 let nArchiveTask = 0;
+let nActiveTask = 0;
 let amountActiveThought = document.querySelector(".amount-active-thought");
 let amountArchiveThought = document.querySelector(".amount-archived-thought");
 let nArchiveThought = 0;
+let nActiveThought = 0;
 let amountActiveIdea = document.querySelector(".amount-active-idea");
 let amountArchiveIdea = document.querySelector(".amount-archived-idea");
 let nArchiveIdea = 0;
+let nActiveIdea = 0;
 
 const createTodoItem = () => {
   let todoContainer = document.querySelector(".todo-container");
@@ -62,14 +65,20 @@ const createTodoItem = () => {
       console.log(textCategory.textContent);
       nArchiveTask++;
       amountArchiveTask.textContent = nArchiveTask;
+      nActiveTask--;
+      amountActiveTask.textContent = nActiveTask;
     } else if (textCategory.textContent == "Random Thought") {
       console.log(textCategory.textContent);
       nArchiveThought++;
       amountArchiveThought.textContent = nArchiveThought;
+      nActiveThought--;
+      amountActiveThought.textContent = nActiveThought;
     } else if (textCategory.textContent == "Idea") {
       console.log(textCategory.textContent);
       nArchiveIdea++;
       amountArchiveIdea.textContent = nArchiveIdea;
+      nActiveIdea--;
+      amountActiveIdea.textContent = nActiveIdea;
     }
     todoItemContainer.remove();
   });
@@ -86,5 +95,19 @@ const createTodoItem = () => {
       archiveBtn,
       deleteBtn
     );
+
+  if (textCategory.textContent == "Task") {
+    console.log(textCategory.textContent);
+    nActiveTask++;
+    amountActiveTask.textContent = nActiveTask;
+  } else if (textCategory.textContent == "Random Thought") {
+    console.log(textCategory.textContent);
+    nActiveThought++;
+    amountActiveThought.textContent = nActiveThought;
+  } else if (textCategory.textContent == "Idea") {
+    console.log(textCategory.textContent);
+    nActiveIdea++;
+    amountActiveIdea.textContent = nActiveIdea;
+  }
 };
 export { createTodoItem };
