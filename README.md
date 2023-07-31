@@ -8,7 +8,7 @@ A simple notes app in JS as a web app.
 - Add task
 - Edit task
 - Archive task
-- Delite task
+- Delete task
 - View active and archived tasks
 
 ## Setup
