@@ -1,7 +1,7 @@
 import { formattedDate } from "./date.js";
+import { addButton } from "./index.js";
 let todoContainer = document.querySelector(".todo-container");
 let inputTodoName = document.querySelector(".input-todo-name");
-// let inputTodoCreated = document.querySelector(".input-todo-created");
 let inputTodoCategory = document.querySelector(".input-todo-category");
 let inputTodoContent = document.querySelector(".input-todo-content");
 let inputTodoDates = document.querySelector(".input-todo-dates");
@@ -58,6 +58,13 @@ const createTodoItem = () => {
 
   deleteBtn.addEventListener("click", () => {
     todoItemContainer.remove();
+  });
+
+  editBtn.addEventListener("click", () => {
+    textName.textContent = inputTodoName.value;
+    textCategory.textContent = inputTodoCategory.value;
+    textContent.textContent = inputTodoContent.value;
+    textDates.textContent = inputTodoDates.value;
   });
 
   archiveBtn.addEventListener("click", () => {
